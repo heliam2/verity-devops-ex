@@ -57,7 +57,15 @@ pipeline {
 		}
 		//Code ends for stage Code Analysis
 		
-		
+		// Code starts for stage Code Coverage
+
+        stage('Code Coverage'){
+            steps{
+                step([
+                    $class: 'JacocoPublisher'
+                ])
+            }
+        }
 	
 		// ******ALL CODE TO BE ADDED ABOVE THIS COMMENT******
     }
